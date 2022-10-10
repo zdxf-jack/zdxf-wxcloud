@@ -26,13 +26,14 @@ exports.getLink = (req, res)=>{
     let mixedToken = appid + '@' + token;
 
     /**
-     * 这段代码是本地调试用的，因本地调试开启了 api.weixin.qq.com 代理，导致 headers 里面的 'x-wx-appid' 始终是资源拥有方的 appid
-     * 这应该是一个bug，在这里手动修复一下即可.
+     * 这段代码是本地调试用的.
+     * 因本地调试开启了 api.weixin.qq.com 代理，导致 headers 里面的 'x-wx-appid' 始终是资源拥有方的 appid
+     * 见官方文档 https://developers.weixin.qq.com/miniprogram/dev/wxcloudrun/src/guide/debug/
+     * 使用限制 5. 本地调试中获得的 x-wx-openid 不包含用户身份，仅能用于部分小程序接口，和线上获取的用户真实 openid 不一致。如需调试微信支付等依赖真实 openid 的功能，请手动改用成开发者自己的真实openid，不要直接使用本地调试中从 header 直接获取的openid。
      */
-    if(localDebug){
-      // wxdbe10331181c100e -- 写上调用方的appid即可
-      mixedToken = 'wxdbe10331181c100e@'+token
-    }
+    // if(localDebug){
+    //   mixedToken = '云环境appId@'+token
+    // }
 
     generatescheme(data, mixedToken).then(rt=>{
       rtd.errCode = 0;
