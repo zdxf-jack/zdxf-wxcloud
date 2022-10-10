@@ -1,6 +1,6 @@
 ## 自动吸粉插件 -- 微信云托管容器DEMO
 
-[自动吸粉完整接入文档](https://doc.nfcshare.com/?utm_source=github)
+[自动吸粉完整接入文档](https://nfcshare.com/?utm_source=github)
 
 代码下载后，直接上传到容器即可。
 
