@@ -1,0 +1,16 @@
+{
+  "name": "zdxf-wxcloud",
+  "version": "1.0.0",
+  "description": "自动吸粉插件 -- 微信云托管接入DEMO",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "john",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "~4.12.2",
+    "body-parser": "^1.17.2",
+    "request": "~2.83.0"
+  }
+}
